@@ -19,4 +19,8 @@ export class AuthPage implements OnInit {
   ngOnInit() {
   }
 
+  submit(){
+
+  }
+
 }

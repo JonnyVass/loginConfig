@@ -7,6 +7,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { CustomInputComponent } from './components/custom-input/custom-input.component';
 import { LogoComponent } from './components/logo/logo.component';
 
+// importacion Librería de la barra de progreso
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 
 @NgModule({
@@ -18,14 +20,23 @@ import { LogoComponent } from './components/logo/logo.component';
   exports: [
       HeaderComponent,
       CustomInputComponent,
-      LogoComponent
+      LogoComponent,
+      NgCircleProgressModule
   ],
   imports: [
     CommonModule,
     IonicModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    NgCircleProgressModule.forRoot({
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300,
+    })
   ]
 })
 export class SharedModule { }

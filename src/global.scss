@@ -71,3 +71,15 @@ ion-button{
     justify-content: center;
     align-items: center;
 }
+
+// Ejemplo facilitado por Harut, para poder mostrar cosas o no en base al tamaño de la pantalla
+.hide-Desktop{
+    @media (min-width: 769px) {
+        display: none;
+    }
+}
+.hide-movile{
+    @media (max-width: 769px) {
+        display: none;
+    }
+}

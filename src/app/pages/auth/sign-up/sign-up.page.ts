@@ -4,17 +4,22 @@ import { User } from 'src/app/models/user.model';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { UtilsService } from 'src/app/services/utils.service';
 
+// Validador Custom creado para la App
+import { CustomValidators } from 'src/app/utils/custom-validators';
+
 @Component({
-  selector: 'app-auth',
-  templateUrl: './auth.page.html',
-  styleUrls: ['./auth.page.scss'],
+  selector: 'app-sign-up',
+  templateUrl: './sign-up.page.html',
+  styleUrls: ['./sign-up.page.scss'],
 })
-export class AuthPage implements OnInit {
+export class SignUpPage implements OnInit {
 
   // me defino el formulario del login
   form = new FormGroup({
+    name: new FormControl('', [Validators.required, Validators.minLength(4)]),
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required]),
+    confirmPassword: new FormControl(''),
   })
 
   constructor(
@@ -23,6 +28,21 @@ export class AuthPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    // al generar el componente, llamo a las validaciones custom de las contraseñas:
+    this.confirmPasswordValidator()
+  }
+
+  confirmPasswordValidator(){
+    // incluyo las validaciones de este campo:
+      // el requerido al igual que en el resto
+      // la validacion custom para comprobar que ambas password son las mismas
+    this.form.controls.confirmPassword.setValidators([
+      Validators.required,
+      CustomValidators.matchValues(this.form.controls.password)
+    ])
+
+    //actualizo los validadores del campo
+    this.form.controls.confirmPassword.updateValueAndValidity();
   }
 
   submit(){
@@ -30,16 +50,18 @@ export class AuthPage implements OnInit {
       console.log(this.form.value);
       // Activo el Spinner
       this.utilSvc.presentLoading({
-        message: 'Autenticando...',
+        message: 'Registrando...',
         duration: 3000,
         spinner: 'crescent'
       })
-      // llamo a Firebase para hacer el login del usuario
-      this.firebaseSvc.login(this.form.value as User).then( res => {
+      // llamo a Firebase para registrar el usuario
+      this.firebaseSvc.signUp(this.form.value as User).then(async res => {
         // capturamos la respuesta y la pintamos en consola
         console.log(res);
 
-        
+        //actualizo en Firebase el nombre del usuario que se está registrando
+          // he puesto la respuesta como sync y ahora pongo aqui el await
+        await this.firebaseSvc.updateUser({ displayName: this.form.value.name});
 
         // Obtengo la informacion del usuario Registrado desde Firebase (respuesta del servicio)
         let user: User ={
@@ -64,8 +86,7 @@ export class AuthPage implements OnInit {
           position: 'middle',
           icon: 'person-outline'
         });
-
-        // borro el formulario de login
+        // borro el formulario de Registro
         this.form.reset();
       }, error =>{
         // capturamos el error y lo pintamos en consola
@@ -86,3 +107,4 @@ export class AuthPage implements OnInit {
   }
 
 }
+

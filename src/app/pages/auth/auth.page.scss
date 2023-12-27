@@ -1,0 +1,18 @@
+// ajustar el tamaño del formulario para que en la web NO aparezca estirado a fullscreen
+    // sino definir un ancho maximo y como está centrado quedará OK
+@media (min-width: 769px){
+
+    form{
+        width: 500px;
+        padding: 50px 10px;
+    }
+}
+
+.sign-up{
+    padding: 50px;
+}
+
+//Ajustar el tamaño de los botones para que tengan el mismo
+ion-button{
+    width: 170px;
+}

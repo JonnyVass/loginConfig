@@ -1,3 +1,55 @@
-<ion-content [fullscreen]="true">
-  <app-header color="success" backButton="/auth"></app-header>
+<ion-content>
+  <app-header></app-header>
+  <!-- ==== Incluyo el Logo creado para la App ==== -->
+  <app-logo></app-logo>
+
+  <h2 class="ion-text-center ion-no-margin">Login</h2>
+
+  <div class="content">
+    <!-- ==== para centrar el formulario en la pantalla ==== -->
+    <div class="d-flex-center">
+
+      <form (keyup.enter)="submit()" (ngSubmit)="submit()" class="ion-text-center">
+        <!-- ==== Incluyo los input personalizado para la App ==== -->
+        <app-custom-input [control]="form.controls.email" type="email" label="Correo" icon="mail-outline">
+          </app-custom-input>
+        <!-- ==== Validamos los errores que se puedan producir ==== -->
+        <div class="validators" *ngIf="form.controls.email.errors && form.controls.email.dirty"> 
+          <!-- ==== form.controls.email.errors -> cualquier error de validacion ==== -->
+          <!-- ==== form.controls.email.dirty -> si ya hemos pinchado en el campo ==== -->
+            <!-- ==== indicamos las validaciones puestas al crear el campo en el TS ==== -->
+          <div *ngIf="form.controls.email.errors?.['required']">Introduce un email</div>
+          <div *ngIf="form.controls.email.errors?.['email']">Introduce un email Valido</div>
+        </div>
+        <app-custom-input [control]="form.controls.password" type="password" label="Contraseña" icon="lock-closed-outline">
+          </app-custom-input>
+        <!-- ==== Validamos los errores que se puedan producir ==== -->
+        <div class="validators" *ngIf="form.controls.password.errors && form.controls.password.dirty"> 
+          <!-- ==== form.controls.email.errors -> cualquier error de validacion ==== -->
+          <!-- ==== form.controls.email.dirty -> si ya hemos pinchado en el campo ==== -->
+            <!-- ==== indicamos las validaciones puestas al crear el campo en el TS ==== -->
+          <div *ngIf="form.controls.password.errors?.['required']">Introduce tu contraseña</div>
+        </div>
+  
+        <ion-button class="ion-margin-vertical" [disabled]="form.invalid" type="submit" shape="round">
+          Acceder
+          <ion-icon slot="end" name="log-in-outline"></ion-icon>
+        </ion-button>
+
+        <!-- ==== Opciones de registro ==== -->
+        <div class="sign-up">
+          <div>¿No tienes cuenta?</div>
+          <ion-button class="ion-margin-vertical" shape="round">
+            Registrate
+            <ion-icon slot="end" name="person-add-outline"></ion-icon>
+          </ion-button>
+        </div>
+        
+
+      </form>
+
+    </div>
+
+    
+  </div>
 </ion-content>

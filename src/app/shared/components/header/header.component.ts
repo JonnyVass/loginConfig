@@ -25,9 +25,9 @@ export class HeaderComponent  implements OnInit {
     this.darkMode = this.themeSvc.darkMode
   }
 
-  setTheme(oscuro: boolean){
+  setTheme(darkMode: boolean){
     //this.darkMode= oscuro; // lo he cambiado por el servicio
-    this.themeSvc.setTheme(oscuro);
+    this.themeSvc.setTheme(darkMode);
   }
 
 }

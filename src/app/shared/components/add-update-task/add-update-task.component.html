@@ -1,0 +1,62 @@
+<ion-content color="light">
+  <app-header color="light" [centerTitle]=true [isModal]=true [titulo]="task ? 'Tarea' : 'Nueva Tarea'"></app-header>
+
+  <app-custom-input [control]="form.controls.title" type="text" label="Titulo">
+  </app-custom-input>
+  <!-- ==== Validamos los errores que se puedan producir ==== -->
+  <div class="validators" *ngIf="form.controls.title.errors && form.controls.title.dirty">
+    <!-- ==== form.controls.title.errors -> cualquier error de validacion ==== -->
+    <!-- ==== form.controls.title.dirty -> si ya hemos pinchado en el campo ==== -->
+    <div *ngIf="form.controls.title.errors?.['required']">El campo es Obligatorio</div>
+    <div *ngIf="form.controls.title.errors?.['minlength']">el campo debe ser valido (min 4 letras)</div>
+  </div>
+
+  <app-custom-input [control]="form.controls.description" type="textarea" label="Descripcion">
+  </app-custom-input>
+  <!-- ==== Validamos los errores que se puedan producir ==== -->
+  <div class="validators" *ngIf="form.controls.description.errors && form.controls.description.dirty">
+    <!-- ==== form.controls.title.errors -> cualquier error de validacion ==== -->
+    <!-- ==== form.controls.title.dirty -> si ya hemos pinchado en el campo ==== -->
+    <div *ngIf="form.controls.description.errors?.['required']">El campo es Obligatorio</div>
+    <div *ngIf="form.controls.description.errors?.['minlength']">el campo debe ser valido (min 10 letras)</div>
+  </div>
+
+  <ion-item class="item-header" lines="none">
+    <ion-label>Actividades</ion-label>
+    
+    <span slot="end" *ngIf="form.value.items.length">
+      Progreso: {{getPercentage()}}%
+    </span>
+    <ion-button (click)="createItem()" slot="end">
+      <ion-icon name="add-circle-outline"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <!-- Nuestra la barra de progreso de la Tarea -->
+  <ion-range class="ion-margin" [value]="getPercentage()"> </ion-range>
+
+  <!-- Plugin ion-reorder -->
+  <ion-reorder-group [disabled]="false" (ionItemReorder)="handleReorder($any($event))">
+
+    <ion-item *ngFor="let item of form.value.items; index as i">
+      <ion-checkbox slot="start" color="success" [(ngModel)]="item.completed"></ion-checkbox>
+      <ion-label class="ion-text-wrap"> {{item.name}}</ion-label>
+      
+      <ion-buttons slot="end">
+        <ion-button (click)="removeItem(i)">
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      
+      <ion-reorder slot="end"></ion-reorder>
+    </ion-item>
+  </ion-reorder-group>
+
+</ion-content>
+<ion-footer>
+  <div class="ion-text-center">
+    <ion-button class="ion-margin" [disabled]="form.invalid" (click)="submit()" shape="round">
+      <!-- lo que pongo debajo es una condicion para poner un texto u otro en funcion de una logica -->
+      {{task ? 'Guardar cambios' : 'Crear Tarea'}}
+    </ion-button>
+  </div>
+</ion-footer>

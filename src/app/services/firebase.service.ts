@@ -49,4 +49,30 @@ export class FirebaseService {
     //Borramos los datos del localStorage
     localStorage.removeItem('usuario')
   }
+
+  // ======== BBDD de Firebase ========
+  getSubcollection(path: string, SubcollectionName: string){
+    //obtiene las subcolecciones de la BBDD de Firebase
+    return this.db.doc(path).collection(SubcollectionName).valueChanges({idField: 'id'});
+        // se pone {idField: 'id'} para que nos devuelva el id de la subcoleccion, para poder luego modificar/eliminar
+  }
+
+  addSubcollection(path: string, SubcollectionName: string, object: any){
+    //añade las subcolecciones de la BBDD de Firebase
+    return this.db.doc(path).collection(SubcollectionName).add(object);
+        // nos genera directamente una subcoleccion con un "id" Aleatorio
+  }
+
+  updateSubcollection(path: string, object: any){
+    //actualiza la subcoleccion de la BBDD de Firebase
+    return this.db.doc(path).update(object);
+        
+  }
+
+  deleteSubcollection(path: string){
+    //Borra la subcoleccion de la BBDD de Firebase
+    return this.db.doc(path).delete();
+        
+  }
+
 }

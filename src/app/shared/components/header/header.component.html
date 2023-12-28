@@ -2,14 +2,14 @@
   <ion-toolbar [color]="color ? color : 'primary'">
     
     <!-- ===== Compruebo si me llaman indicando la Ruta de vuelta ===== -->
-    <ion-buttons *ngIf="backButton" slot="start">
+    <ion-buttons slot="start">
       <!-- ===== Cerrar cuando es modal (no hay back) ===== -->
-      <ion-button *ngIf="isModal">
+      <ion-button *ngIf="isModal" (click)="dismissModal()">
         <ion-icon name="close-circle-outilne"></ion-icon>
       </ion-button>
       
       <!-- ===== Boton de atras ===== -->
-      <ion-back-button [defaultHref]="backButton"></ion-back-button>
+      <ion-back-button *ngIf="backButton" [defaultHref]="backButton"></ion-back-button>
     </ion-buttons>
 
     <ion-title *ngIf="titulo" [ngClass]="{'ion-text-center': centerTitle}">{{titulo}}</ion-title>

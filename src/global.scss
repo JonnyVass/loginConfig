@@ -83,3 +83,27 @@ ion-button{
         display: none;
     }
 }
+
+.add-update-modal{
+    --height: 95%;
+    --border-radius: 20px;
+}
+
+//estilos para cuando quiero mostrar una pantalla Vacía de contenido
+.empty{
+    padding-top: 15vh;
+    opacity: 30%;
+    text-align: center;
+
+    ion-icon{
+        font-size: 130px;
+    }
+}
+
+// para resoluciones medias lo pogo a full screen
+@media screen and (max-width: 768px) {
+    .add-update-modal{
+        --height: 100%;
+        --border-radius: 0;
+    }    
+}

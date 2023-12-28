@@ -9,19 +9,22 @@ import { LogoComponent } from './components/logo/logo.component';
 
 // importacion Librería de la barra de progreso
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { AddUpdateTaskComponent } from './components/add-update-task/add-update-task.component';
 
 
 @NgModule({
   declarations: [
       HeaderComponent,
       CustomInputComponent,
-      LogoComponent
+      LogoComponent,
+      AddUpdateTaskComponent
   ],
   exports: [
       HeaderComponent,
       CustomInputComponent,
       LogoComponent,
-      NgCircleProgressModule
+      NgCircleProgressModule,
+      AddUpdateTaskComponent
   ],
   imports: [
     CommonModule,

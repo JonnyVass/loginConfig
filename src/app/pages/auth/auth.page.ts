@@ -33,7 +33,7 @@ export class AuthPage implements OnInit {
         message: 'Autenticando...',
         duration: 3000,
         spinner: 'crescent'
-      })
+      });
       // llamo a Firebase para hacer el login del usuario
       this.firebaseSvc.login(this.form.value as User).then( res => {
         // capturamos la respuesta y la pintamos en consola

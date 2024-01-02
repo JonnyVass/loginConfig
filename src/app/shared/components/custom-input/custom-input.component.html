@@ -2,8 +2,9 @@
 <!-- SOLO se muestra si el componente a incluir NO es textarea  -->
 <ion-item *ngIf="type !== 'textarea'" class="ion-margin-vertical">
   <ion-icon color="primary" *ngIf="icon" slot="start" [name]="icon"></ion-icon>
-  <ion-label position="floating">{{label}}</ion-label>
-  <ion-input debounce="500" [autocomplete]="autocomplete" [type]="type" [formControl]="control"></ion-input>
+  <!--<ion-label position="floating">{{label}}</ion-label> -->
+      <!-- por una actualizacion de ionic, se elimina el label y se pasa como atributo -->
+  <ion-input [label]="label" debounce="500" [autocomplete]="autocomplete" [type]="type" [formControl]="control"></ion-input>
   
   <ion-buttons *ngIf="isPassword" slot="end">
     <ion-button (click)="showOrHidePassword()">
@@ -15,6 +16,7 @@
 <!-- ========== Text Area ========== -->
 <!-- SOLO se muestra si queremos incluir este "type" de componente -->
 <ion-item *ngIf="type == 'textarea'" class="ion-margin-vertical">
-  <ion-label position="floating">{{label}}</ion-label>
-  <ion-textarea autoGrow="true" debounce="500" [formControl]="control" ></ion-textarea>
+  <!--<ion-label position="floating">{{label}}</ion-label> -->
+      <!-- por una actualizacion de ionic, se elimina el label y se pasa como atributo -->
+  <ion-textarea [label]="label" autoGrow="true" debounce="500" [formControl]="control" ></ion-textarea>
 </ion-item>

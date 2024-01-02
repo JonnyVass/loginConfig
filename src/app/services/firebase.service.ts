@@ -47,13 +47,26 @@ export class FirebaseService {
     // Navegamos a la pantalla del login
     this.utilSvc.routerLink('/auth');
     //Borramos los datos del localStorage
-    localStorage.removeItem('usuario')
+    localStorage.removeItem('usuario');
+    localStorage.removeItem('Allows');
+    localStorage.removeItem('Rutas');
   }
 
   // ======== BBDD de Firebase ========
-  getSubcollection(path: string, SubcollectionName: string){
-    //obtiene las subcolecciones de la BBDD de Firebase
+  getSubcollectionWithId(path: string, SubcollectionName: string){
+    //obtiene las subcolecciones de la BBDD de Firebase con el Id
+
+    //pinto lo que va a buscar
+    console.log(`getSubcollection con ID -> ${path} // ${SubcollectionName}`)
     return this.db.doc(path).collection(SubcollectionName).valueChanges({idField: 'id'});
+        // se pone {idField: 'id'} para que nos devuelva el id de la subcoleccion, para poder luego modificar/eliminar
+  }
+  getSubcollection(path: string, SubcollectionName: string){
+    //obtiene las subcolecciones de la BBDD de Firebase con el Id
+
+    //pinto lo que va a buscar
+    console.log(`getSubcollection -> ${path} // ${SubcollectionName}`)
+    return this.db.doc(path).collection(SubcollectionName).valueChanges();
         // se pone {idField: 'id'} para que nos devuelva el id de la subcoleccion, para poder luego modificar/eliminar
   }
 

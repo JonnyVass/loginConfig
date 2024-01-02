@@ -51,11 +51,6 @@ export class HomePage implements OnInit {
   // para saber cuando mostrar o no el loading desde el HTML
   loading: boolean = false;
 
-  getUser() {
-    // devuelvo los datos del Usuario que tengo LocalStorage
-    return this.user = this.utilSvc.getElementInLocalStorage('usuario');
-  }
-
   constructor(
     private firebaseSvc: FirebaseService,
     private utilSvc: UtilsService
@@ -76,6 +71,11 @@ export class HomePage implements OnInit {
 
   getPercentage(task: Task) {
     return this.utilSvc.getPercentage(task);
+  }
+  
+  getUser() {
+    // devuelvo los datos del Usuario que tengo LocalStorage
+    return this.user = this.utilSvc.getElementInLocalStorage('usuario');
   }
 
   async addOrUpdateTask(task?: Task) {
@@ -109,10 +109,11 @@ export class HomePage implements OnInit {
     // activo el switch del loading
     this.loading = true;
     //obtengo datos de la BBDD
-    let sub = this.firebaseSvc.getSubcollection(path, 'tasks').subscribe({
+    let sub = this.firebaseSvc.getSubcollectionWithId(path, 'tasks').subscribe({
       next: (res: Task[]) => {
         //pinto en consola la respuesta
-        console.log(res);
+          //console.log('Respuesta Listado Tareas ->');
+          //console.log(res);
         // inicializo el listado de tareas con la respuesta
         this.tasks = res;
         //me suscribo a la respuesta para que solo al entrar se realicen las peticiones a la BBDD de firebase

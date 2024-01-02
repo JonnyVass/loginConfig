@@ -47,7 +47,8 @@ export class SignUpPage implements OnInit {
 
   submit(){
     if (this.form.valid){
-      console.log(this.form.value);
+        //console.log('Capmos formulario Registro ->')
+        //console.log(this.form.value);
       // Activo el Spinner
       this.utilSvc.presentLoading({
         message: 'Registrando...',
@@ -57,7 +58,8 @@ export class SignUpPage implements OnInit {
       // llamo a Firebase para registrar el usuario
       this.firebaseSvc.signUp(this.form.value as User).then(async res => {
         // capturamos la respuesta y la pintamos en consola
-        console.log(res);
+          //console.log('Respuesta Registro con Firebase');
+          //console.log(res);
 
         //actualizo en Firebase el nombre del usuario que se está registrando
           // he puesto la respuesta como sync y ahora pongo aqui el await
@@ -73,7 +75,7 @@ export class SignUpPage implements OnInit {
         this.utilSvc.setElementInLocalStorage('usuario', user);
 
         // Navegamos a dentro de la parte logada de la App
-        this.utilSvc.routerLink('/tabs/home')
+        this.utilSvc.routerLink('/tabs')
 
         // desactivo el Spinner
         this.utilSvc.dismissLoading();
@@ -90,6 +92,7 @@ export class SignUpPage implements OnInit {
         this.form.reset();
       }, error =>{
         // capturamos el error y lo pintamos en consola
+        console.log('Error Registro con Firebase');
         console.log(error);
         // desactivo el Spinner
         this.utilSvc.dismissLoading();

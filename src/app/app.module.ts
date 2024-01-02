@@ -12,7 +12,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-
+import { AngularFireRemoteConfigModule, DEFAULTS, SETTINGS, AngularFireRemoteConfig } from '@angular/fire/compat/remote-config';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,9 +22,21 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireRemoteConfigModule //remoteConfig
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+  ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+
+  constructor(
+      private remoteConfig: AngularFireRemoteConfig //remoteConfig
+  ) {
+    this.remoteConfig.fetchAndActivate(); //remoteConfig
+
+   }
+
+}

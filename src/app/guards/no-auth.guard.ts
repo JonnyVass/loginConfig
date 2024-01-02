@@ -26,7 +26,7 @@ export class NoAuthGuard implements CanActivate {
           return true;
         }else{
           //navegamos a la Home de pa parte Pirvada
-          this.utilSvc.routerLink('/tabs/home');
+          this.utilSvc.routerLink('/tabs');
           //indico que NO
           return false;
         }

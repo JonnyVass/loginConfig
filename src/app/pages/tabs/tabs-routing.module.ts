@@ -5,7 +5,7 @@ import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: '', 
     component: TabsPage,
     children: [
       {
@@ -15,9 +15,14 @@ const routes: Routes = [
       {
         path: 'profile',
         loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+      },
+      {
+        path: 'no-access',
+        loadChildren: () => import('./no-access/no-access.module').then( m => m.NoAccessPageModule)
       }
     ]
   },
+
   
 ];
 

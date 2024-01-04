@@ -1,0 +1,56 @@
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+pricing {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem 0 5rem 2rem;
+    padding-bottom: 32px;
+  }
+  
+  .pricing > h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: 200;
+    text-align: center;
+    margin: 1rem 0 2rem 0;
+    padding-bottom: 2rem;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  }
+  
+  .pricing > .container > .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-gap: 2rem;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }

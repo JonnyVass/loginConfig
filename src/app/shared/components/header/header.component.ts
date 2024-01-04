@@ -38,4 +38,18 @@ export class HeaderComponent  implements OnInit {
     this.utilSvc.dismissModal();
   }
 
+  //Navegamos a la pantalla de Login
+  toLogin(){
+    this.utilSvc.routerLink('/auth');
+  }
+
+  //Navegamos a la pantalla de Registro
+  toSingUp(){
+    this.utilSvc.routerLink('/auth/sign-up');
+  }
+  
+  //Navegamos a la landingPage
+  toHome(){
+    this.utilSvc.routerLink('/landing');
+  }
 }

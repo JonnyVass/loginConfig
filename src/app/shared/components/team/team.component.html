@@ -1,0 +1,17 @@
+<ion-content>
+  <h1>{{tituloSeccion}}</h1>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col *ngFor="let item of Equipo" sizeLg="3" sizeMd="4" sizeSm="6" size="6">
+        <ion-card >
+          <ion-img alt="{{item.Subtitulo}}" src="{{item.Imagen}}"></ion-img>
+          
+          <ion-card-header style="text-align: center;">
+            <ion-card-title>{{item.Titulo}}</ion-card-title>
+            <ion-card-subtitle>{{item.Subtitulo}}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

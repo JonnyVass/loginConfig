@@ -1,0 +1,37 @@
+<ion-content>
+  <app-header></app-header>
+  <!-- ==== Incluyo el Logo creado para la App ==== -->
+  <app-logo></app-logo>
+
+  <!-- Varias fotos (carrusel) -->
+  <app-intro tituloSeccion="Algunas Fotos"></app-intro>
+  <!-- Contar Historias del Club -->
+  <app-historys tituloSeccion="Experiencias"></app-historys>
+ 
+  <!-- Junta Directiva -> Puede usarse historys -->
+  <app-team tituloSeccion="Junta Directiva"></app-team>
+  <!-- Instalaciones ->  -->
+  <app-instalaciones tituloSeccion="Instalaciones"></app-instalaciones>
+  <!-- Info Cursos y FAQs ->  -->
+  <div class="pricing" style="padding-bottom: 32px;">
+    <h1>Nuestros cursos</h1>
+    <div class="container">
+      <div class="pricing-grid">
+        <app-price-table
+          *ngFor="let pricingBox of pricingBoxes"
+          [pricingBox]="pricingBox"
+        ></app-price-table>
+      </div>
+    </div>
+  </div>
+  <!-- Noticias -> Enlazar con FaceBook ¿? -->
+  <!-- Contacto WhatsApp -> Enlazar con WhatsApp -->
+  <app-floating-button textoWhatsApp="He visto la web del Club y quería ponerme en contacto con vosotros. Me podeis pasar informacion sobre:"></app-floating-button>
+  <!--
+  <app-slide></app-slide>
+  <app-banner></app-banner>
+  <app-contact></app-contact>
+-->
+<app-footer></app-footer>
+
+</ion-content>

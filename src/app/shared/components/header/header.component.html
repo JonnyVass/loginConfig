@@ -14,15 +14,26 @@
 
     <ion-title *ngIf="titulo" [ngClass]="{'ion-text-center': centerTitle}">{{titulo}}</ion-title>
 
-    <!-- ===== Botones para cambio de Tema ligth/dark ===== -->
     <ion-buttons slot="end">
+      <!-- ===== Botones para cambio de Tema ligth/dark ===== -->
       <ion-button (click)="setTheme(false)" *ngIf="darkMode.value">
         <ion-icon name="sunny-outline"></ion-icon>
       </ion-button>
-
       <ion-button (click)="setTheme(true)" *ngIf="!darkMode.value">
         <ion-icon name="moon-outline"></ion-icon>
       </ion-button>
+      <!-- ===== Boton LandingPage ===== -->
+      <ion-button (click)="toHome()">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-button>
+      <!-- ===== Botones de Login/Registro ===== -->
+      <ion-button (click)="toLogin()">
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="toSingUp()">
+        <ion-icon name="person-add-outline"></ion-icon>
+      </ion-button>
     </ion-buttons>
+
   </ion-toolbar>
 </ion-header>

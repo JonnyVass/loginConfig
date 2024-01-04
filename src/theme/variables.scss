@@ -1,6 +1,10 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
-
+:root{
+    // Media queries
+    $mobile-breakpoint: 568px;
+    $tablet-breakpoint: 960px;
+}
 /** Ionic CSS Variables **/
 :root [color-theme="light"] {
   /** primary **/

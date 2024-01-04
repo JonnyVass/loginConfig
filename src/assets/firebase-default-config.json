@@ -1,0 +1,37 @@
+{
+  "parameters": {
+    "numero": {
+      "defaultValue": {
+        "value": "7"
+      },
+      "valueType": "NUMBER"
+    },
+    "cadena": {
+      "defaultValue": {
+        "value": "pruebaRemoteConfig"
+      },
+      "valueType": "STRING"
+    },
+    "switch": {
+      "defaultValue": {
+        "value": "true"
+      },
+      "valueType": "BOOLEAN"
+    },
+    "Default": {
+      "defaultValue": {
+        "value": "{\"userAllow\":[\"prueba1@gamil.com\",\"prueba2@gamil.com\"]}"
+      },
+      "valueType": "JSON"
+    }
+  },
+  "version": {
+    "versionNumber": "1",
+    "updateTime": "2023-12-29T07:39:35.276594Z",
+    "updateUser": {
+      "email": "tiroconarcorocigalgo@gmail.com"
+    },
+    "updateOrigin": "CONSOLE",
+    "updateType": "INCREMENTAL_UPDATE"
+  }
+}

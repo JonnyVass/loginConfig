@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AngularFireRemoteConfig } from '@angular/fire/compat/remote-config';
 import { Rutas } from 'src/app/models/rutas-model';
 import { User } from 'src/app/models/user.model';
 import { FirebaseRemoteConfigService } from 'src/app/services/firebase-remote-config.service';
@@ -28,20 +29,31 @@ export class AuthPage implements OnInit {
   cadena: string;
   //prueba number
   num: number;
-
+  prueba:any;
   constructor(
     private firebaseSvc: FirebaseService,
-    private utilSvc: UtilsService
+    private utilSvc: UtilsService,
     //private configFirebase: FirebaseRemoteConfigService //remoteConfig
+    private remoteConfig: AngularFireRemoteConfig
   ) { }
 
   ngOnInit() {
-    //this.configFirebase.getnumberByKey('prueba').then((valor: String) => this.usuarios.push(valor);
-    //remoteConfig
-    //this.configFirebase.getNumeroConfig('numero').then((valor: number) => this.num = valor );
-    //remoteConfig
-    //this.configFirebase.getCadenaConfig('cadena').then((valor: string) => this.cadena = valor );
+    //al usar AngularFireRemoteConfig ya NO es necesario tener metodos custom para obtener la RemoteConfig
+      //this.configFirebase.getnumberByKey('prueba').then((valor: String) => this.usuarios.push(valor);
+      //remoteConfig
+      //this.configFirebase.getNumeroConfig('numero').then((valor: number) => this.num = valor );
+      //remoteConfig
+      //this.configFirebase.getCadenaConfig('cadena').then((valor: string) => this.cadena = valor );
 
+    // esta sería la forma de obtenerlos usando AngularFireRemoteConfig
+      //obtener un String
+    this.remoteConfig.getString('cadena').then((valor: string) => this.cadena = valor );
+      //obtener un Numerico
+    this.remoteConfig.getNumber('numero').then((valor: number) => this.num = valor );
+      //obtener un Mapa/array
+        //quedaría defnir la interface/modelo y poder setearlo directamente
+    this.remoteConfig.getString('Default').then((valor: string) => this.prueba = JSON.parse(valor) );
+    
   }
 
   async submit() {

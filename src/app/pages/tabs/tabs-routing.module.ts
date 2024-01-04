@@ -19,9 +19,14 @@ const routes: Routes = [
       {
         path: 'no-access',
         loadChildren: () => import('./no-access/no-access.module').then( m => m.NoAccessPageModule)
-      }
+      },
+      {
+        path: 'testimonials',
+        loadChildren: () => import('./testimonials/testimonials.module').then( m => m.TestimonialsPageModule)
+      },
     ]
   },
+  
 
   
 ];

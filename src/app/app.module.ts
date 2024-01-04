@@ -14,6 +14,8 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireRemoteConfigModule, DEFAULTS, SETTINGS, AngularFireRemoteConfig } from '@angular/fire/compat/remote-config';
 
+
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -29,6 +31,7 @@ import { AngularFireRemoteConfigModule, DEFAULTS, SETTINGS, AngularFireRemoteCon
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent],
+
 })
 export class AppModule {
 
@@ -36,7 +39,7 @@ export class AppModule {
       private remoteConfig: AngularFireRemoteConfig //remoteConfig
   ) {
     this.remoteConfig.fetchAndActivate(); //remoteConfig
-
+    
    }
 
 }

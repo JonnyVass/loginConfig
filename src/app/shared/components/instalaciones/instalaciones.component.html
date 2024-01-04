@@ -1,0 +1,13 @@
+<!-- NO meter nada dentro del ion-content para evitar el scroll de cada componente -->
+<!--<ion-content> -->
+  <h1>{{tituloSeccion}}</h1>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col class="centrado" *ngFor="let item of instalaciones" sizeLg="6" sizeMd="6" sizeSm="6" size="6">
+        <ion-icon class="avatar" name="{{item.Icono}}"></ion-icon>
+        <h2>{{item.Titulo}}</h2>
+        <p>{{item.Contenido}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+<!--</ion-content>-->

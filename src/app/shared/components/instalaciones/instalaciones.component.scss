@@ -2,24 +2,6 @@
     $mobile-breakpoint: 500px;//578px;//568px;
     $tablet-breakpoint: 768px;//960px;
 
-ion-content{
-    @media (max-width: $mobile-breakpoint) {//578
-        height: 67%;    
-    }
-    @media (min-width: $mobile-breakpoint) and (max-width: $tablet-breakpoint) {
-        height: 67%;    
-    }    
-    @media (min-width: $tablet-breakpoint) and (max-width: 990px) { //768
-        height: 60%;   
-    }
-    @media (min-width: 990px) and (max-width: 1199px) {
-        height: 54%;   
-    }
-    @media (min-width: 1199px){
-        height: 54%;   
-    }
-}
-
 .avatar{
     font-size: 130px;
 }

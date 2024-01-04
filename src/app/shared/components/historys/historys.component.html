@@ -1,33 +1,30 @@
-<ion-content>
-  <h1>{{tituloSeccion}}</h1>
-  <ion-grid fixed>
-    <ion-row>
-      <ion-col *ngFor="let item of historys; let impar=odd" sizeLg="12" sizeMd="12" sizeSm="12" size="12">
-        <div class="h-section-two-cols">
-          <!-- Cuando es Impar -->
-          <div class="left-col" *ngIf="impar">
-            <h2>{{item.Titulo}}</h2>
-            <div class="feature-text">{{item.Contenido}}</div>
-          </div>
-          <div class="right-col" *ngIf="impar">
-            <div class="h-image">
-              <img src="{{item.Imagen}}" alt="">
-            </div>
-          </div>
-          <!-- Cuando es Par -->
-          <div class="left-col" *ngIf="!impar">
-            <div class="h-image">
-              <img src="{{item.Imagen}}" alt="">
-            </div>
-          </div>
-          <div class="right-col" *ngIf="!impar">
-            <h2>{{item.Titulo}}</h2>
-            <div class="feature-text">{{item.Contenido}}</div>
+<h1>{{tituloSeccion}}</h1>
+<ion-grid fixed>
+  <ion-row>
+    <ion-col *ngFor="let item of historys; let impar=odd" sizeLg="12" sizeMd="12" sizeSm="12" size="12">
+      <div class="h-section-two-cols">
+        <!-- Cuando es Impar -->
+        <div class="left-col" *ngIf="impar">
+          <h2>{{item.Titulo}}</h2>
+          <div class="feature-text">{{item.Contenido}}</div>
+        </div>
+        <div class="right-col" *ngIf="impar">
+          <div class="h-image">
+            <img src="{{item.Imagen}}" alt="">
           </div>
         </div>
-      </ion-col>
-      
-    </ion-row>
-  </ion-grid>
+        <!-- Cuando es Par -->
+        <div class="left-col" *ngIf="!impar">
+          <div class="h-image">
+            <img src="{{item.Imagen}}" alt="">
+          </div>
+        </div>
+        <div class="right-col" *ngIf="!impar">
+          <h2>{{item.Titulo}}</h2>
+          <div class="feature-text">{{item.Contenido}}</div>
+        </div>
+      </div>
+    </ion-col>
 
-</ion-content>
+  </ion-row>
+</ion-grid>

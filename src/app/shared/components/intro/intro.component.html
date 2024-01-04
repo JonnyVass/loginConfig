@@ -1,110 +1,21 @@
-  <!--
-  <div *ngIf="!mobile">
-    // Estoy en Escritorio/tablet
+<h1>{{tituloSeccion}}</h1>
 
+<swiper-container class="swiper" #slider pagination="true" navigation="true" loop="true" autoplay-delay="2500"
+  autoplay-disable-on-interaction="false" effect="cards">
+  <!--pagination="true" -> para que aparezcan los puntitos con el Nº de slide-->
+  <!--navigation="true" -> para que aparezcan las fechas de "siguiente" y "anterior"-->
+  <!--loop="true" -> para hacer scroll infinito-->
+  <!--autoplay-delay="2500" autoplay-disable-on-interaction="false" -> que se mueva automaticamente-->
+  <!--effect="cards" -> para darle el efecto visual de "Baraja de cartas"-->
 
-    <ion-card *ngFor="let item of tarjetas">
-      <img alt="Silhouette of mountains" src="{{item.Imagen}}" />
-      <ion-card-header>
-        <ion-card-title>{{item.Titulo}}</ion-card-title>
-        <ion-card-subtitle>{{item.Subtitulo}}</ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>{{item.Contenido}}</ion-card-content>
-    </ion-card>
-
+  <swiper-slide class="swiper-slide" *ngFor="let item of fotos">
+    <div class="img-principal" style="background-position: center center; background-repeat: no-repeat; background-size: cover;
+      background: linear-gradient(rgba(0, 0, 0, -0.50) 0%, rgba(0,0,0,0.50) 100%), url({{item.Imagen}});">
+      <div class="contenedor">
+        <div class="titulo">{{item.Titulo}}</div>
+        <div class="descripcion">{{item.Contenido}}</div>
+      </div>  
   </div>
-  <div *ngIf="mobile">
-    //Estoy en movil 
-  -->
-  <h1>{{tituloSeccion}}</h1>
-  <!-- Slider main container -->
-  <!-- 
-  <div class="swiper">
-    // Additional required wrapper 
-    <div class="swiper-wrapper">
-      // Slides 
-      <div class="swiper-slide">
-        <img src="assets/img/slide1.jpg">
-      </div>
-      <div class="swiper-slide">
-        <img src="assets/img/slide1.jpg">
-      </div>
-      <div class="swiper-slide">
-        <img src="assets/img/slide2.jpg">
-      </div>
-      <div class="swiper-slide">
-        <img src="assets/img/slide3.jpg">
-      </div>
-      <div class="swiper-slide">
-        <img src="assets/img/slide4.jpg">
-      </div>
-      <div class="swiper-slide">
-        <img src="assets/img/slide5.jpg">
-      </div>
-
-
-    </div>
-    // If we need pagination 
-    <div class="swiper-pagination"></div>
-
-    // If we need navigation buttons 
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-
-    // If we need scrollbar 
-    <div class="swiper-scrollbar"></div>
-  </div>
--->
-<swiper-container
- #slider
- class="slides-content"
- pagination="true"
->
-  <!-- Slide 1 -->
-  <swiper-slide class="content">
-    <div class="title-content">
-      <span class="title dark-secondary">Prueba</span>
-      <img class="img" src="https://ionicframework.com/docs/img/demos/card-media.png" alt="Diseño claro e intuitivo"/>
-    </div>
-    <div class="message">
-      <span class="mapfre-mb-m mapfre-fs-s dark-secondary">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
-    </div>
   </swiper-slide>
-  <swiper-slide class="content">
-    <div class="title-content">
-      <span class="title dark-secondary">Prueba2</span>
-      <img class="img" src="https://ionicframework.com/docs/img/demos/card-media.png" alt="Diseño claro e intuitivo"/>
-    </div>
-    <div class="message">
-      <span class="mapfre-mb-m mapfre-fs-s dark-secondary">xxxxxxxxxxxxxxxx22xxxxxxxxxxxxxxxxx</span>
-    </div>
-  </swiper-slide>
+
 </swiper-container>
-
-
-<!--  
-    <div class="swiper-container swiper-carousel">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img class="img-fluid" src="assets/img/slide1.jpg">
-        </div>
-        <div class="swiper-slide">
-          <img class="img-fluid" src="assets/img/slide2.jpg">
-        </div>
-        <div class="swiper-slide">
-          <img class="img-fluid" src="assets/img/slide3.jpg">
-        </div>
-        <div class="swiper-slide">
-          <img class="img-fluid" src="assets/img/slide4.jpg">
-        </div>
-        <div class="swiper-slide">
-          <img class="img-fluid" src="assets/img/slide5.jpg">
-        </div>
-      </div>
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-next" style="top:85%"></div>
-      <div class="swiper-button-prev" style="top:85%"></div>
-    </div>
-  <!--
-  </div>
--->

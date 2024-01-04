@@ -2,24 +2,6 @@
     $mobile-breakpoint: 500px;//578px;//568px;
     $tablet-breakpoint: 768px;//960px;
 
-ion-content{
-    @media (max-width: $mobile-breakpoint) {//578
-        height: 143%;    
-    }
-    @media (min-width: $mobile-breakpoint) and (max-width: $tablet-breakpoint) {
-        height: 153%;    
-    }    
-    @media (min-width: $tablet-breakpoint) and (max-width: 990px) { //768
-        height: 100%;   
-    }
-    @media (min-width: 990px) and (max-width: 1199px) {
-        height: 100%;   
-    }
-    @media (min-width: 1199px){
-        height: 113%;   
-    }
-}
-
 ion-img{
     display: block;
     object-fit: inherit;

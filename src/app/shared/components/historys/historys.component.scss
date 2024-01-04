@@ -3,24 +3,6 @@
     $mobile-breakpoint: 500px;//578px;//568px;
     $tablet-breakpoint: 768px;//960px;
 
-ion-content{
-    @media (max-width: $mobile-breakpoint) {//578
-        height: 105%;    
-    }
-    @media (min-width: $mobile-breakpoint) and (max-width: $tablet-breakpoint) {
-        height: 115%;    
-    }    
-    @media (min-width: $tablet-breakpoint) and (max-width: 990px) { //768
-        height: 145%;   
-    }
-    @media (min-width: 990px) and (max-width: 1199px) {
-        height: 186%;   
-    }
-    @media (min-width: 1199px){
-        height: 217%;   
-    }
-   
-}
 .h-section-two-cols{
     align-items: center;
     flex-direction: row;

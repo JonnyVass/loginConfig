@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import { ThemeService } from './services/theme.service';
 
-//Carrusell
+//Carrusell (importacion para toda la App)
 import { register } from 'swiper/element/bundle';
 
-
-
-
+// inicializo el carrusell
 register();
 
 @Component({

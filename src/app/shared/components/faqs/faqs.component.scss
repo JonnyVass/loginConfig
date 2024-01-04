@@ -1,0 +1,27 @@
+//custom ion-accordion para las FAQS
+ion-accordion{
+    border-radius: 18px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    /* margin-right: -39px; */
+    width: 97%;
+}
+h1{
+    margin-top: 18px;
+    margin-bottom: 5px;
+    font-size: 2rem;
+}
+h3{
+    margin-top: 5px;
+    font-size: 1.5rem;
+}
+ion-label{
+    color: rgba(0, 0, 0, 1.0)
+}
+.feature-text{
+    //darle el siguiente color mas apagado
+    color: rgba(0, 0, 0, 0.7);
+    text-align: start;
+}
+

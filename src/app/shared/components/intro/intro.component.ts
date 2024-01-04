@@ -19,21 +19,21 @@ export class IntroComponent implements OnInit {
   //definimos el array con el contenido de las tarjetas
   fotos = [
     { 
-      Titulo: 'Competiciones Nacionales',
+      Titulo: '2º Puesto 3D Indoor RFETA',
       Imagen: 'assets/img/slide1.jpg',
-      Contenido: 'Participamos en Campeonatos de España y en la Liga Nacional de Bosque.' 
+      Contenido: 'En la edicion del 2019 en Marinador, Silvia alanzó la medalla de Plata, Enhorabuena!!!!! Esta es la primera medalla Nacional del Club' 
     },{ 
-      Titulo: 'Competiciones CLM - FCMTA',
+      Titulo: 'Cto 3D FCMTA 2023',
       Imagen: 'assets/img/slide2.jpg',
-      Contenido: 'Participamos en las Ligas y Campeonatos de FCMTA en modalidades de: Bosque, Sala y AireLibre.' 
+      Contenido: 'El Ranking de los 3 participantes fue: 2º Puesto Compuesto Femenino // 3º y 4º Puesto Longbow Masculino' 
     },{ 
-      Titulo: 'Competiciones Sociales',
+      Titulo: '1º Puesto 3D Indoor FCMTA',
       Imagen: 'assets/img/slide3.jpg',
-      Contenido: 'Participamos en ligas sociales que realizan los clubs a nivel interno.' 
+      Contenido: 'En la edicion del 2024 en Valdeluz, Silvia se alzó con la Victoria ocupando el Oro en el cajón' 
     },{ 
-      Titulo: 'Competiciones Locales',
+      Titulo: 'Liga Interclubes 2023',
       Imagen: 'assets/img/slide4.jpg',
-      Contenido: 'Siempre que nos permite el calendario, realizamos nuestras propias competiciones en Sala o Bosque.' 
+      Contenido: 'En la tirada de Tomelloso, el Ranking de nuestros arquer@s fue: 3º y 5º Puesto Compuesto Femenino // 1º Puesto Longbow Masculino' 
     }
   ]
 

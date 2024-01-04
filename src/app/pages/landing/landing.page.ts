@@ -10,33 +10,33 @@ export class LandingPage implements OnInit {
 
   pricingBoxes = [
     {
-      name: 'Clase Unica',
+      name: 'Clase Única',
       price: 10,
       features: [
         'Alquiler de Material',
-        '2 Horas de practica',
+        '2 Horas de práctica',
         'Monitor de apoyo'
       ]
     },
     {
-      name: 'Curso Iniciacion',
+      name: 'Curso Iniciación',
       price: 59,
       features: [
         'Alquiler de Material',
         '20 Horas Generales',
-        'Teoría y Practica',
+        'Teoría y Práctica',
         'Monitor FCMTA'
       ]
     },
     {
-      name: 'Curso Tecnificacion',
+      name: 'Curso Tecnificación',
       price: 99,
       features: [
         'Material del Alumno',
         '10 Horas Específicas',
-        'Revision Arco/potencia',
-        'Revision Cuerda/flechas',
-        'Rutina de tiro'
+        'Ajuste Arco/Potencia',
+        'Ajuste Cuerda/Flechas',
+        'Cear rutina de tiro'
       ]
     }
   ];

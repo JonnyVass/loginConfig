@@ -14,6 +14,7 @@ import { HistorysComponent  } from './components/historys/historys.component';
 import { TeamComponent  } from './components/team/team.component';
 import { InstalacionesComponent  } from './components/instalaciones/instalaciones.component';
 import { PriceTableComponent  } from './components/price-table/price-table.component';
+import { FAQsComponent  } from './components/faqs/faqs.component';
 import { FloatingButtonComponent  } from './components/floating-button/floating-button.component';
 
 import { FooterComponent  } from './components/footer/footer.component';
@@ -34,6 +35,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     TeamComponent,
     InstalacionesComponent,
     PriceTableComponent,
+    FAQsComponent,
     FloatingButtonComponent,
     FooterComponent
       
@@ -48,6 +50,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     TeamComponent,
     InstalacionesComponent,
     PriceTableComponent,
+    FAQsComponent,
     FloatingButtonComponent,
     FooterComponent,
     NgCircleProgressModule
